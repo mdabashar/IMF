@@ -1,0 +1,18 @@
+#!/bin/bash -l
+#PBS -l select=1:ncpus=1:mem=32GB
+#PBS -l walltime=48:00:00
+#PBS -N b.3b3.r2.FF15.l05.fb5 
+cd $PBS_O_WORKDIR
+module load GCCcore/13.3.0
+module load Python/3.12.3
+module load libffi/3.4.5
+
+mkdir venv_basic
+cd venv_basic
+python -m venv env
+cd env
+source activate
+python -m pip install datasets evaluate torch numpy pandas provider torchmetrics peft --user
+cd ../../
+
+python3 main_meta_new_ms_2bnn.py --lr=1e-3 --numFirst=1 --numSec=1 --nForwardPasses=15 --blr=1e-3 --nepoch=100 --length=500 --functionalp=0.5 --bnnp=0.5 --ratio=0.2 --earlyStop=5000 --scheduler=3000
