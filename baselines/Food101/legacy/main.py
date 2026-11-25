@@ -181,11 +181,11 @@ if __name__ == '__main__':
         
     for i in range(1):
 
-        with open('./data/text_train.pkl', 'rb') as f:
+        with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'text_train.pkl'), 'rb') as f:
              m2 = pickle.load(f)
-        with open('./data/image_train.pkl', 'rb') as f:
+        with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'image_train.pkl'), 'rb') as f:
              m1 = pickle.load(f)
-        with open('./data/label_train.pkl', 'rb') as f:
+        with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'label_train.pkl'), 'rb') as f:
              y = pickle.load(f)
 
         X = np.arange(len(m1))
@@ -207,11 +207,11 @@ if __name__ == '__main__':
         val_dataset = DatasetBERT(m1_test,m2_test,test_y)
         val_loader = DataLoader(dataset=val_dataset, batch_size=batch_size, drop_last=True, shuffle=True)
 
-        with open('./data/text_test.pkl', 'rb') as f:
+        with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'text_test.pkl'), 'rb') as f:
              text_test = pickle.load(f)
-        with open('./data/image_test.pkl', 'rb') as f:
+        with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'image_test.pkl'), 'rb') as f:
              image_test = pickle.load(f)
-        with open('./data/label_test.pkl', 'rb') as f:
+        with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'label_test.pkl'), 'rb') as f:
              label_test = pickle.load(f)
 
         test_dataset = DatasetBERT(np.array(image_test),np.array(text_test),np.array(label_test))

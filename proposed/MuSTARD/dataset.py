@@ -20,10 +20,10 @@ class DatasetBERT(Dataset):
         return sample
 
 def getDataloder(fold = 0):
-    modality3_data = np.load("../../datasets/mustard/mustard_audio.npy").astype(np.float32)
-    modality2_data = np.load("../../datasets/mustard/mustard_video.npy").astype(np.float32)
-    modality1_data = np.load("../../datasets/mustard/mustard_text.npy").astype(np.float32)
-    y_data = np.argmax(np.load("../../datasets/mustard/mustard_label.npy"), axis=1)
+    modality3_data = np.load((str(__import__("pathlib").Path(__file__).resolve().parents[2] / "datasets" / "mustard") + "/" + "mustard_audio.npy")).astype(np.float32)
+    modality2_data = np.load((str(__import__("pathlib").Path(__file__).resolve().parents[2] / "datasets" / "mustard") + "/" + "mustard_video.npy")).astype(np.float32)
+    modality1_data = np.load((str(__import__("pathlib").Path(__file__).resolve().parents[2] / "datasets" / "mustard") + "/" + "mustard_text.npy")).astype(np.float32)
+    y_data = np.argmax(np.load((str(__import__("pathlib").Path(__file__).resolve().parents[2] / "datasets" / "mustard") + "/" + "mustard_label.npy")), axis=1)
     x_data = np.arange(modality1_data.shape[0])
     # 999, 233
     skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=999)

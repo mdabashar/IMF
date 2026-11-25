@@ -46,7 +46,7 @@ def set_seed(seed):
 
 
 def load_data():
-    dataset = "../../../datasets/ROSMAP/"
+    dataset = (str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "ROSMAP") + "/")
 
     # ----------------------------
     # train

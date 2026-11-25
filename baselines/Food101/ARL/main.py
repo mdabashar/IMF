@@ -42,18 +42,18 @@ def set_seed(seed):
 
 
 def load_data():
-    with open('../../data/text_train.pkl', 'rb') as f:
+    with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'text_train.pkl'), 'rb') as f:
         m2 = pickle.load(f)
-    with open('../../data/image_train.pkl', 'rb') as f:
+    with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'image_train.pkl'), 'rb') as f:
         m1 = pickle.load(f)
-    with open('../../data/label_train.pkl', 'rb') as f:
+    with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'label_train.pkl'), 'rb') as f:
         y = pickle.load(f)
 
-    with open('../../data/text_test.pkl', 'rb') as f:
+    with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'text_test.pkl'), 'rb') as f:
         m2_test = pickle.load(f)
-    with open('../../data/image_test.pkl', 'rb') as f:
+    with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'image_test.pkl'), 'rb') as f:
         m1_test = pickle.load(f)
-    with open('../../data/label_test.pkl', 'rb') as f:
+    with open((str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "Food101") + "/" + 'label_test.pkl'), 'rb') as f:
         y_test = pickle.load(f)
 
     return m1, m2, y, m1_test, m2_test, y_test

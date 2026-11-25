@@ -43,7 +43,7 @@ def set_seed(seed):
 
 
 def load_data():
-    dataset = "../../../vist/datasets/task2/"
+    dataset = (str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "CrisisMMD2") + "/")
 
     # ----------------------------
     # train

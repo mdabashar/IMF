@@ -25,7 +25,7 @@ def datasetConfig(x):
     if x=="crisismmd1":
         return "../datasets/upper/"
     elif x=="crisismmd3":
-        return "../../datasets/task3_5fold/"
+        return (str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "CrisisMMD3") + "/")
     elif x=="mvsa_single":
         return "../datasets/mvsa_single/"
     elif x=="mvsa_multi":

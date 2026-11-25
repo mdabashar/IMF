@@ -29,7 +29,7 @@ def datasetConfig(x):
     elif x=="mvsa_single":
         return "../datasets/mvsa_single_old_annotation/"
     elif x=="rosmap":
-        return "../../datasets/ROSMAP/"
+        return (str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "ROSMAP") + "/")
 
 
 

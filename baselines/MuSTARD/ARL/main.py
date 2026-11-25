@@ -125,7 +125,7 @@ def set_seed(seed):
 
 
 def load_data():
-    dataset = "../../../datasets/mustard/"
+    dataset = (str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "mustard") + "/")
 
     m3 = np.load(dataset + "mustard_audio.npy").astype(np.float32)
     m2 = np.load(dataset + "mustard_video.npy").astype(np.float32)

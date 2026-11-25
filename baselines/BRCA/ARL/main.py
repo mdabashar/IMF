@@ -50,7 +50,7 @@ def set_seed(seed):
 
 
 def load_data():
-    dataset = "../../../datasets/BRCA/"
+    dataset = (str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "BRCA") + "/")
 
     # ----------------------------
     # train

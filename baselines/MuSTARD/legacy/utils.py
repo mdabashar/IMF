@@ -23,7 +23,7 @@ def drawGraph(inputs, title, y_label, legend_name, save_path):
 def datasetConfig(x):
 
     if x=="mustard":
-        return "../../datasets/mustard/"
+        return (str(__import__("pathlib").Path(__file__).resolve().parents[3] / "datasets" / "mustard") + "/")
 
 
 def split_train_meta(im_dir, txt_dir, y_dir, split_ratio, ifWeibo=False, ifYelp=False):

@@ -50,6 +50,6 @@ def weight_caculator(class_dist, mtd="ins"):
 
 def datasetConfig(x):
     if x =="crisismmd1":
-        return "../datasets/task1/"
+        return (str(__import__("pathlib").Path(__file__).resolve().parents[2] / "datasets" / "CrisisMMD1") + "/")
     elif x =="mvsa":
         return "../datasets/mvsa_data/5fold"
